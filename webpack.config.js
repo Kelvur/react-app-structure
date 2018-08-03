@@ -80,5 +80,12 @@ module.exports = {
 				}
 			}
 		}
+	},
+	devtool: 'cheap-module-eval-source-map',
+	devServer: {
+		open: false,
+		host: 'localhost',
+		port: 3000,
+		contentBase: path.join(__dirname, 'dist'),
 	}
 }
