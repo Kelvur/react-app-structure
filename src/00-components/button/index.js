@@ -1,11 +1,13 @@
 // Core
 import React from 'react';
 import PropTypes from 'prop-types';
+// Style
+import './style.css'
 // Utils
 import {noop} from 'utils';
 
 
-const Button = (props) => {
+const Button = props => {
 	return (
 		<button 
 			className={`button ${props.className}`}
@@ -17,7 +19,7 @@ const Button = (props) => {
 	)
 }
 
-Button.PropTypes = {
+Button.propTypes = {
 	className: PropTypes.string,
 	onClick: PropTypes.func,
 	onBlur: PropTypes.func,

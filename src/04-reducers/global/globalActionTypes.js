@@ -1,0 +1,3 @@
+
+export const GLOBAL_SET_USER = 'GLOBAL_SET_USER';
+export const GLOBAL_SET_TOKEN = 'GLOBAL_SET_TOKEN';
