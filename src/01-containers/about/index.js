@@ -1,7 +1,11 @@
 // Core
-import React from 'react';
+import React from 'react'
 // Components
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
+// Constants
+import {HOME} from '05-constants/router'
+// Style
+import './style.css'
 
 
 export default class About extends React.Component {
@@ -9,9 +13,9 @@ export default class About extends React.Component {
 	render(){
 		return (
 			<div>
-				<h2>About</h2>
+				<h2 className='textBlue'>About</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<Link to='/'>Go back to Home</Link>
+				<Link to={HOME}>Go back to Home</Link>
 			</div>
 		)
 	}
