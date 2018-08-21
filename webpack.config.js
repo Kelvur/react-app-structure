@@ -7,6 +7,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
+const server = 'localhost';
+const port = 3000;
 
 module.exports = {
 	entry: {
@@ -33,6 +35,9 @@ module.exports = {
 							'react',
 							'stage-2'
 						],
+						plugins: [
+							'transform-decorators-legacy',
+						]
 					},
 				}
 			},
@@ -84,8 +89,10 @@ module.exports = {
 	devtool: 'cheap-module-eval-source-map',
 	devServer: {
 		open: false,
-		host: 'localhost',
-		port: 3000,
+		host: server,
+		port: port,
+		public: `http://${server}:${port}`,
 		contentBase: path.join(__dirname, 'dist'),
+		historyApiFallback: true,
 	}
 }
