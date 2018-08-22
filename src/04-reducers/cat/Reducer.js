@@ -2,15 +2,16 @@
 import {fromJS} from 'immutable'
 // Initial State
 import initialState from '04-reducers/cat/InitialState'
-// Action Types
+// Reducer Builder
+import {buildCases, switchCases} from '04-reducers/reducerBuilder'
+// Constants
 import * as types from '05-constants/cat/ActionTypes'
 
 
-const cases = {
+const cases = buildCases({
 	[types.CAT_SET_URL]: (state, action) => state.set('url', action.url),
-	default: state => state,
-}
+})
 
 export default (state = fromJS(initialState), action) => {
-	return (cases[action.type] || cases.default)(state, action);
+	return switchCases(state, action, cases);
 }
