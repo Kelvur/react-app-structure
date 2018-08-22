@@ -1,16 +1,17 @@
 // Core
 import {fromJS} from 'immutable'
-// Action Types
-import * as types from '05-constants/dog/ActionTypes'
 // Initial State
 import initialState from '04-reducers/dog/InitialState'
+// Reducer Builder
+import {buildCases, switchCases} from '04-reducers/reducerBuilder'
+// Constants
+import * as types from '05-constants/dog/ActionTypes'
 
 
-const cases = {
+const cases = buildCases({
 	[types.DOG_SET_URL]: (state, action) => state.set('url', action.url),
-	default: state => state,
-}
+})
 
 export default (state = fromJS(initialState), action) => {
-	return (cases[action.type] || cases.default)(state, action);
+	return switchCases(state, action, cases);
 }
