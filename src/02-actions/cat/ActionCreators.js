@@ -1,4 +1,4 @@
-// Types
+// Constants
 import * as types from '05-constants/cat/ActionTypes'
 
 

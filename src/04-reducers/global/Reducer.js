@@ -1,7 +1,7 @@
 // Action Types
-import * as types from '04-reducers/global/globalActionTypes'
+import * as types from '05-constants/global/ActionTypes'
 // Initial State
-import globalInitialState from '04-reducers/global/globalInitialState';
+import initialState from '04-reducers/global/InitialState';
 
 
 const cases = {
@@ -14,6 +14,6 @@ const cases = {
 	default: state => state,
 }
 
-export default (state = globalInitialState, action) => {
+export default (state = initialState, action) => {
 	return (cases[action.type] || cases.default)(state, action);
 }
