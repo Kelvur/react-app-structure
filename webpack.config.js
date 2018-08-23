@@ -36,6 +36,7 @@ module.exports = {
 							'stage-2'
 						],
 						plugins: [
+							'syntax-dynamic-import',
 							'transform-decorators-legacy',
 						]
 					},
