@@ -7,6 +7,8 @@ import {Link} from 'react-router-dom'
 import {getRandomCatUrl} from '02-actions/cat/DispatchFunctions'
 // Constants
 import {HOME} from '05-constants/router'
+// Style
+import './style.less'
 
 
 function mapStateToProps(state){
@@ -21,7 +23,7 @@ function mapStateToProps(state){
 export default class CatContainer extends React.Component {
 
 	componentDidMount(){
-		this.props.getRandomCatUrl();	
+		this.props.getRandomCatUrl();
 	}
 
 	renderUrl(url){
@@ -30,9 +32,9 @@ export default class CatContainer extends React.Component {
 
 	render(){
 		return (
-			<div>
-				<h2>Cat</h2>
-				{this.renderUrl(this.props.url)}
+			<div className="cat">
+				<h2>Cat Page</h2>
+				<h5 className="cat__link">{this.renderUrl(this.props.url)}</h5>
 				<Link to={HOME}>Go back to Home</Link>
 			</div>
 		)
