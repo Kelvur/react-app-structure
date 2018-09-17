@@ -5,10 +5,13 @@
   "main": "./src/main.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
+    "pre": "webpack --mode development",
     "pro": "webpack --mode production"
   },
   "keywords": [
-    "react"
+    "react",
+    "boilerplate",
+    "structure"
   ],
   "author": "Miguel Osorio @kelvur",
   "license": "ISC",
