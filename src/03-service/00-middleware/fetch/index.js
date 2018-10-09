@@ -14,7 +14,10 @@ export const get = (url = '', config = {}) => {
 		method: 'GET',
 	})
 	.then(response => response.json())
-	.catch(error => console.error(error))
+	.catch(error => {
+		console.error(error)
+		return error
+	})
 }
 
 export const post = (url = '', data = {}, config = {}) => {
@@ -25,7 +28,10 @@ export const post = (url = '', data = {}, config = {}) => {
 		body: JSON.stringify(data),
 	})
 	.then(response => response.json())
-	.catch(error => console.error(error))
+	.catch(error => {
+		console.error(error)
+		return error
+	})
 }
 
 // GET RESOURCE

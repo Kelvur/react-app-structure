@@ -43,18 +43,10 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.css$/,
+				test: /(\.css)|(\.less)$/,
 				use: [
 					'style-loader',
 					MiniCssExtractPlugin.loader,
-					'css-loader',
-					'postcss-loader'
-				]
-			},
-			{
-				test: /\.less$/,
-				use: [
-					'style-loader',
 					'css-loader',
 					'less-loader',
 					'postcss-loader'
@@ -76,18 +68,6 @@ module.exports = {
 			{from: './public/favicon.ico', to: './favicon.ico', toType: 'file'}
 		])
 	],
-	optimization: {
-		splitChunks: {
-			cacheGroups: {
-				styles: { // Esto le dice a MiniCssExtractPlugin que lo compile todo en un solo fichero
-					name: 'style',
-					test: /\.css$/,
-					chunks: 'all',
-					enforce: true,
-				}
-			}
-		}
-	},
 	devtool: 'cheap-module-eval-source-map',
 	devServer: {
 		open: false,

@@ -1,26 +1,20 @@
 // Core
 import React from 'react'
-// Components
-import Button from '00-components/button'
-import {Link} from 'react-router-dom'
+// Containers
+import I18n from '01-containers/i18n'
+// Constants
+import {LOCALE_LIST} from '05-constants/locale'
 // Style
 import 'style/style.css'
-import {ABOUT, RANDOM_CAT, RANDOM_DOG} from '05-constants/router'
 
 
 export default class App extends React.Component {
 
 	render(){
 		return (
-			<div>
-				<h1>App Here!</h1>
-				<ul>
-					<li><Button>This button does nothing!</Button></li>
-					<li><Link to={ABOUT}>Go to About</Link></li>
-					<li><Link to={RANDOM_CAT}>Cat</Link></li>
-					<li><Link to={RANDOM_DOG}>Dog</Link></li>
-				</ul>
-			</div>
+			<I18n>
+				{this.props.children}
+			</I18n>
 		)
 	}
 

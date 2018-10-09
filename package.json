@@ -1,14 +1,17 @@
 {
   "name": "react-app-structure",
-  "version": "1.1.0-dev",
+  "version": "1.2.0-dev",
   "description": "",
   "main": "./src/main.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
+    "pre": "webpack --mode development",
     "pro": "webpack --mode production"
   },
   "keywords": [
-    "react"
+    "react",
+    "boilerplate",
+    "structure"
   ],
   "author": "Miguel Osorio @kelvur",
   "license": "ISC",
