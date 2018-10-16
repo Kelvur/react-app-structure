@@ -1,0 +1,16 @@
+
+/* Variables */
+@srcPath: "..";
+
+/* Styles to be overriden */
+
+/* This is necesary to override styles outside of #app scope */
+body {
+	font-family: sans-serif;
+}
+
+/* App styles */
+#app {
+	@import "@{srcPath}/01-containers/header/style.less";
+	font-family: sans-serif;
+}

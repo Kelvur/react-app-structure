@@ -53,9 +53,10 @@ export const i18n = (options = {}) => WrappedComponent => {
 				currentLocale,
 				...props,
 			}
-			if(options.changeLocale) defaultProps.changeLocale = changeLocale;
+			if(options.changeLocale) localeProps.changeLocale = changeLocale;
 			// number format
 			// function formatNumber
+			// function formatSimpleNumber
 			// date format
 			// function formatDate
 			return localeProps
