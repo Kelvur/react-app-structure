@@ -4,6 +4,7 @@
   "description": "",
   "main": "./src/main.js",
   "scripts": {
+    "start": "npm run dev",
     "dev": "webpack-dev-server --mode development",
     "pre": "webpack --mode development",
     "pro": "webpack --mode production"
