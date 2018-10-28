@@ -15,7 +15,11 @@ export default class SelectLocale extends React.Component {
 	}
 
 	handleChange = event => {
-		console.log(event, event.target.value);
+		if(this.props.onChange){
+			this.props.onChange(event.target.value)
+		} else {
+			this.props.changeLocale(event.target.value);
+		}
 	}
 
 	render(){
