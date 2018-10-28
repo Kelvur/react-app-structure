@@ -1,5 +1,6 @@
 export default {
-	'CAT_PAGE': 'Página del Gato'
+	APP_TITLE: 'Bienvenido a React-App-Structure',
+	CAT_PAGE: 'Página del Gato',
 }
 
 export const ES_ES_NUMBER_FORMAT = {
