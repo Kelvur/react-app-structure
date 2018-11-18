@@ -1,6 +1,6 @@
 {
   "name": "react-app-structure",
-  "version": "1.2.0-dev",
+  "version": "1.2.0",
   "description": "",
   "main": "./src/main.js",
   "scripts": {
