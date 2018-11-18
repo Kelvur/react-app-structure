@@ -9,10 +9,10 @@ import {noop} from 'utils'
 
 const Button = props => {
 	return (
-		<button 
+		<button
 			{...props}
 			className={`button ${props.className}`}
-			onClick={props.onClick} 
+			onClick={props.onClick}
 			onBlur={props.onBlur}
 			>
 			{props.children}

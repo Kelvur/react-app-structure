@@ -1,0 +1,23 @@
+
+/* Variables */
+@srcPath: "..";
+
+/* Styles to be overriden */
+
+/* This is necesary to override styles outside of #app scope */
+body {
+	font-family: sans-serif;
+	margin: 0;
+	ul {
+		list-style: none;
+	}
+}
+
+/* App styles */
+#app {
+	/* Components */
+	@import "@{srcPath}/00-components/styledSelectLocale/style.less";
+	/* Containers */
+	@import "@{srcPath}/01-containers/header/style.less";
+	font-family: sans-serif;
+}
