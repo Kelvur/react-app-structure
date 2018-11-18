@@ -13,6 +13,11 @@ import {HOME} from '05-constants/router'
 import './style.less'
 
 
+
+function renderImg(url, title, className = 'cat__img'){
+	return url ? <img className={className} src={url} title={title}/> : null
+}
+
 function mapStateToProps(state){
 	return {
 		url: state.getIn(['cat', 'url']),
@@ -26,7 +31,26 @@ function mapStateToProps(state){
 export default class CatContainer extends React.Component {
 
 	componentDidMount(){
-		this.props.getRandomCatUrl();
+		this.bindReload()
+		this.props.getRandomCatUrl()
+	}
+
+	componentWillUnmount(){
+		this.unbindReload()
+	}
+
+	bindReload(){
+		window.addEventListener('keypress', this.handleKeypressReload)
+	}
+
+	unbindReload(){
+		window.removeEventListener('keypress', this.handleKeypressReload)
+	}
+
+	handleKeypressReload = evt => {
+		if(evt.key === 'r' || evt.key === 'R'){
+			this.props.getRandomCatUrl()
+		}
 	}
 
 	renderUrl(url){
@@ -37,8 +61,9 @@ export default class CatContainer extends React.Component {
 		return (
 			<div className="cat">
 				<h2>{this.props.locale.CAT_PAGE}</h2>
+				{renderImg(this.props.url, this.props.locale.CAT_IMG_TITLE)}
 				<h5 className="cat__link">{this.renderUrl(this.props.url)}</h5>
-				<Link to={HOME}>Go back to Home</Link>
+				<Link to={HOME}>{this.props.locale.BACK_HOME}</Link>
 			</div>
 		)
 	}
